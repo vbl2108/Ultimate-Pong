@@ -67,14 +67,26 @@ screen.onkeypress(roboDown, 'Down')
 #ball
 puckX = ball.xcor()
 puckY = ball.ycor()
+print (ball.distance(player))
 while 0==0:
-    rightBorder = 300
+    rightBorder = 500
     while puckX < rightBorder:
-        ball.right(45)
-        ball.forward(10)
-    leftBorder = -300
-    while puckX >= leftBorder:
-        ball.back(10)
+        puckX = puckX +1
+        ball.setx(puckX)
+        print (ball.distance(player))
+        if ball.distance(player) == 0:
+            ball.setx(0)
+
+#    leftBorder = 500
+#    while puckX < leftBorder:
+#        puckX = puckX -1
+#        ball.setx(puckX)
+#        print (ball.distance(robo))
+#    if ball.distance(robo) == 0:
+#        ball.setx(0)
+#    leftBorder = -300
+#    while puckX >= leftBorder:
+#        ball.back(10)
     
 
 #done()
