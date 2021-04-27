@@ -26,7 +26,7 @@ score.write(str(lscore) + ' |Score| ' + str(rscore), False, align="center", font
 
 #ball setup
 ball = turtle.Turtle()
-ball.shape('square')
+ball.shape('circle')
 ball.color('white')
 ball.penup()
 
