@@ -77,6 +77,9 @@ ball.vely = random.randrange(1, 5)
 
 while 0==0:
 
+    #random number for random things
+    posNeg = random.randrange(1, 3)
+
     #puck movement
     ball.setx (ball.xcor() + ball.velx)
     ball.sety (ball.ycor() + ball.vely)
@@ -85,27 +88,33 @@ while 0==0:
     #Border collision 
     if ball.ycor() > 280:
         #direction change
-        ball.velx = ball.velx*1
-        ball.vely = ball.vely*-1
+        ball.vely = -2
 
         #velocity change
         ball.velx = random.randrange(1, 5)
         ball.vely = random.randrange(1, 5)
+        ball.vely = ball.vely*-1
 
     if ball.ycor() < -280:
-        ball.velx = ball.velx*1
-        ball.vely = ball.vely*-1
+        ball.vely = 2
 
         ball.velx = random.randrange(1, 5)
         ball.vely = random.randrange(1, 5)
 
     if ball.xcor() > 320:
         ball.setposition(0, 0)
-        ball.velx = ball.velx*-1
-        ball.vely = ball.vely*-1
 
         ball.velx = random.randrange(1, 5)
         ball.vely = random.randrange(1, 5)
+
+        #trying to make ball change direction after restart
+        if posNeg == 1:
+
+            ball.velx = ball.velx*-1
+            ball.vely = ball.vely*-1
+        else:
+            ball.velx = ball.velx*1
+            ball.vely= ball.vely*1
 
         ls = ls+1
         score.clear()
@@ -113,11 +122,18 @@ while 0==0:
 
     if ball.xcor() < -320:
         ball.setposition(0, 0)
-        ball.velx = ball.velx*-1
-        ball.vely = ball.vely*-1
 
         ball.velx = random.randrange(1, 5)
         ball.vely = random.randrange(1, 5)
+
+        if posNeg == 1:
+
+            ball.velx = ball.velx*-1
+            ball.vely = ball.vely*-1
+        else:
+            ball.velx = ball.velx*1
+            ball.vely= ball.vely*1
+
 
         rs = rs+1
         score.clear()
@@ -130,6 +146,7 @@ while 0==0:
     if ball.distance(robo) == 0:
         ball.velx = ball.velx*-1
         ball.vely = ball.velx*-1
+
 
 
 done()
