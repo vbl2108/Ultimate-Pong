@@ -79,8 +79,8 @@ screen.onkeypress(rightplayerUp, 'Up')
 screen.onkeypress(rightplayerDown, 'Down')
 
 #ball velocity on both axis. Random number between 1 and 5
-ball.velx = random.randrange(1, 5)
-ball.vely = random.randrange(1, 5)
+ball.velx = random.randrange(1, 4)
+ball.vely = random.randrange(1, 4)
 
 while 0==0:
 
@@ -150,10 +150,10 @@ while 0==0:
     def collideTrue():
         ball.ycor() >= (rightplayer.ycor() - 45) and ball.ycor() <= (rightplayer.ycor() + 45)
 
-    if ball.xcor() == 300 and collideTrue:
+    if ball.xcor() >= 300 and collideTrue:
         ball.velx = ball.velx *-1
 
-    if ball.xcor() == -300 and collideTrue:
+    if ball.xcor() <= -300 and collideTrue:
         ball.velx = ball.velx *-1
 
 
